@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%;background-color: gray; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+app-formation-main{
+    width: 100%;
+}
+.mat-form-field-appearance-fill.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{padding-top: 0.3em;}
+.mat-form-field-appearance-fill .mat-form-field-infix{
+ 
+    border-top: 0;
+}
+.mat-form-field-infix{
+    width: 100px !important;
+}
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .container{
+        width: 100%;
+        margin-left: 0;
+    }
+    app-formation-lyout,app-bench{
+        width:100%;
+      
+    }
+  }
+  @media only screen and (min-width: 769px) {
+    $navdesctop: 200px;
+    .container{
+        display: flex;
+        width: calc(100% - #{$navdesctop});
+        margin-left:$navdesctop;
+      
+        height: 100vh;
+    }
+app-formation-lyout{width: 70%; padding: 5px;}
+app-bench{
+        width:30%;
+        padding: 5px;
+    }
+  }
+
+
