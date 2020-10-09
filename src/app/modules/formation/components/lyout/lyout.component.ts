@@ -1,7 +1,7 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
 
-import {Player} from '../../../models/player'
+import {Player} from '../../../../models/player'
 
 @Component({
   selector: 'app-formation-lyout',

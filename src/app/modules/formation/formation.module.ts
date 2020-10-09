@@ -5,7 +5,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { FormationMainComponent } from './components/formation-main/formation-main.component';
 import { FormationRoutingModule } from './formation.router.module';
-import { BenchComponent } from 'src/app/formation/components/bench/bench/bench.component';
+import { BenchComponent } from 'src/app/modules/formation/components/bench/bench/bench.component';
 import { LyoutComponent } from './components/lyout/lyout.component';
 import { DropDownComponent } from './components/shared/drop-down/drop-down.component';
 import { TeamPlayerComponent } from './components/lyout/team-player/team-player.component';

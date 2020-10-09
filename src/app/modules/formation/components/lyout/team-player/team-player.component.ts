@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {Player} from './../../../../models/player';
-import {playersListMock} from '../../../../mocks/players-list-mock';
+import {Player} from './../../../../../models/player';
+import {playersListMock} from '../../../../../mocks/players-list-mock';
 const gc = 'Goalkeeper';
 @Component({
   selector: 'app-team-player',
