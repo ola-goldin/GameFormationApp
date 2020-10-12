@@ -1,9 +1,13 @@
 
+import {ID} from '@datorama/akita'
+
 import {Player} from 'src/app/models/player'
-import { FormationType } from 'src/app/models/formation-type';
-export interface Match {
+import { FormationType } from '../models/formation-type';
+
+
+export interface MatchData {
     matchMetadata: {
-        rivelName: string
+        rivelName: string,
         rivelLogoImage: string
         score:{myTeam: number, rival: number},
         matchLocation: string
@@ -14,7 +18,11 @@ export interface Match {
          lineup: number[],
          bench: number[]
     }
-  
-   
 
+}
+
+export function createStore(params: Partial<MatchData>) {
+  return {
+
+  } as MatchData;
 }

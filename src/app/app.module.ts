@@ -12,17 +12,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-
-
-
-
-
+import { MatCardModule } from '@angular/material/card';
+import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
+    
    
   ],
   imports: [
@@ -30,11 +29,14 @@ import { MatListModule } from '@angular/material/list';
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
+    MatCardModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    environment.production ? [] : AkitaNgDevtools.forRoot(),
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

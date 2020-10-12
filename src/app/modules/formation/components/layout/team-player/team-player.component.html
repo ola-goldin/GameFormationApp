@@ -1,0 +1,22 @@
+
+<div #viewSelf class="player">
+    <strong *ngIf="player && replace=='true'">Replace</strong>  
+    <div (click)="replaceMode(player)" class="player" *ngIf="player">
+        <img src="{{player.image}}"> 
+        <p>{{player.firstName}} {{player.lastName}} </p>
+       <p>({{player.positionCategory}})</p>
+
+    </div>
+  
+ <img *ngIf="!player" src="../../../../../assets/question.jpg"> 
+       
+
+<app-drop-down #viewDropDown  [placeholder]="'Select player'"
+ [display]="'lastName'"
+ [disableSelect]="player"
+ [currentList]="players"
+ (selectedOutput)="setPlayer($event)"
+ (stateOpen)="setList($event)">
+ 
+ </app-drop-down>
+</div>

@@ -7,8 +7,16 @@ img{
     flex-direction: column;
     align-items: center;
     color: white;
+    position: relative;
 }
 p{
     margin: 0;
     
+}
+strong{
+    position: absolute;
+    z-index: 5000;
+    top: 10%;
+    color: white;
+
 }

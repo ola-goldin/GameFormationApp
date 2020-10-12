@@ -1,0 +1,12 @@
+<div  class="field" fxLayoutGap="2em" fxLayout="column" fxLayoutAlign="space-between stretch">
+    <div *ngFor="let row of currentFormation | async"  fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between stretch" >
+       <div *ngFor="let i of [].constructor(row)">
+        <app-team-player [isGoalkeeper]="false"></app-team-player>
+       </div>
+    </div>
+
+    <div *ngIf="currentFormation"  fxLayout="row" fxLayoutAlign="space-evenly center">
+        <app-team-player class="goalkeeper"  [isGoalkeeper]="true" ></app-team-player>
+    </div>
+
+</div>

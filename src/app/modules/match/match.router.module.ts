@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MatchDataComponent } from './components/match-data/match-data.component';
+import { MatchDetailsComponent } from './components/match-details/match-details.component';
 
 
 
 const routes: Routes = [
   {
     path: '',
-  component: MatchDataComponent,
+  component: MatchDetailsComponent,
     children: [
-      { path: '', component: MatchDataComponent },
+      { path: '', component: MatchDetailsComponent },
 
 
     ]

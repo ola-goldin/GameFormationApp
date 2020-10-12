@@ -13,20 +13,26 @@ export class DropDownComponent implements   OnInit{
 
    }
   ngOnInit(): void {
+    if(this.currentList!=undefined)
     this.defaultSelect = this.currentList[0];
     this.cdr.detectChanges();
   }
 
   options = new FormControl();
   defaultSelect :any = null;
-  @Input() currentList: string[];
+  @Input() currentList: Observable<string[]>;
   @Input() placeholder: string;
   @Input() display: string;
+  @Input() disableSelect:boolean=false;
   @Output() selectedOutput = new EventEmitter();
- 
+  @Output() stateOpen = new EventEmitter();
+  
   public sendOutput  ($event) {
     this.selectedOutput.emit($event.value);
 }
 
+public isOpen  ($event) {
+  this.stateOpen.emit($event);
+}
 
 }
