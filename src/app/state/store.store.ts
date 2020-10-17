@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import { MatchData } from './store.model';
 import { EntityState, EntityStore, StoreConfig } from '@datorama/akita';
 import { FormationType } from '../models/formation-type';
+import { Player } from '../models/player';
 
 export interface StoreState extends EntityState<MatchData> {
   autoFormationOff:boolean,
    changePlayerModeOn:boolean,
-
+   inReplaceMode:Player
 
 }
 
@@ -14,6 +15,7 @@ export function initState():StoreState{
    return {
     autoFormationOff:false,
     changePlayerModeOn:false,
+    inReplaceMode:null
 
     }
    

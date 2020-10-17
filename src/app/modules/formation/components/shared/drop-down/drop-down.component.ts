@@ -28,6 +28,9 @@ export class DropDownComponent implements   OnInit{
   @Output() stateOpen = new EventEmitter();
   
   public sendOutput  ($event) {
+   
+    if(this.disableSelect)
+    this.options.disable();
     this.selectedOutput.emit($event.value);
 }
 

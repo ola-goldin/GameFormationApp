@@ -25,17 +25,22 @@ export class TeamPlayerComponent implements OnInit {
   @ViewChild('viewDropDown') vd: ElementRef;
   @ViewChild('viewSelf') vs: ElementRef;
   players :Observable<Player[]>;
-  player :Player;
+  player : Player;
 
   ngOnInit(): void {
-    this.players= this.getFieldPlayers(); 
+   // this.players= this.getFieldPlayers(); 
     
   } 
 
 
   replaceMode(playe:Player){
+    this.data.playersList.next([...this.data.playersList.getValue(),this.player]) 
+    this.setPlayer(this.store.getReplaceModePlayer());
+    this.store.placePlayer(playe);
+    this.store.setReplaceMode(null);
+    
+  // var z= this.vs.nativeElement.style.background = 'grey';
 
-   var z= this.vs.nativeElement.style.background = 'grey';
   }
 
   setPlayer($event){
@@ -46,7 +51,6 @@ export class TeamPlayerComponent implements OnInit {
       if( this.player.positionCategory == gc)
       playerI=this.player.positionCategory.toLowerCase();
       this.player.image = `${path}${playerI}.jpg`;
-
       this.data.setPlayerOnField(this.player);
      
     }
@@ -61,19 +65,19 @@ export class TeamPlayerComponent implements OnInit {
       this.players = of(this.data.playersList.getValue().filter(x => x.positionCategory == gc)) }
   }
 
-  getFieldPlayers(): Observable<Player[]> {
-    let list = [];
+  // getFieldPlayers(): Observable<Player[]> {
+  //   let list = [];
 
-    this.store.getPlayers().subscribe(({ allPlayers }) => {
+  //   this.store.getPlayers().subscribe(({ allPlayers }) => {
     
-      if (!this.isGoalkeeper )
-        list = allPlayers.filter(x => x.positionCategory != gc)
-      else list = allPlayers.filter(x => x.positionCategory == gc)
-    }
-    )
+  //     if (!this.isGoalkeeper )
+  //       list = allPlayers.filter(x => x.positionCategory != gc)
+  //     else list = allPlayers.filter(x => x.positionCategory == gc)
+  //   }
+  //   )
      
-    return  of(list);
-  }
+  //   return  of(list);
+  // }
    
  
 

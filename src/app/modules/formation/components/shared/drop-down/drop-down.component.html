@@ -1,8 +1,8 @@
-<mat-form-field appearance="fill">
+<mat-form-field (click)="isOpen($event)" appearance="fill">
 
-    <mat-label>{{placeholder}}</mat-label>
+    <mat-label (click)="isOpen($event)">{{placeholder}}</mat-label>
 
-    <mat-select  [disabled]="disableSelect"  [formControl]="options" [(value)]="defaultSelect" (openedChange)="isOpen($event)" (selectionChange)="sendOutput($event)" >
+    <mat-select (click)="isOpen($event)" [attr.data-disabled]="disableSelect"  [formControl]="options" [(value)]="defaultSelect"  (selectionChange)="sendOutput($event)" >
    
       <mat-select-trigger>
         {{options.value ? options.value[display] :''  }}

@@ -45,7 +45,7 @@ export class MatchPageDataServiceService {
   setPlayerOnField(player:Player){
      const all = this.playersList.getValue();
      const filtered =all.filter(x=>x.id!=player.id)
-     this.playersList.next(filtered)
+     this.playersList.next(this.sortPlayers(filtered))
       this.store.placePlayer(player);
   }
 

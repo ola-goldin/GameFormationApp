@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouteReuseStrategy } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
@@ -25,6 +26,9 @@ import { TeamPlayerComponent } from './components/layout/team-player/team-player
     ReactiveFormsModule,
     FormationRoutingModule,
     MatSelectModule
-  ]
+  ],
+  providers: [
+    {provide: RouteReuseStrategy, useClass: FormationMainComponent}
+]
 })
 export class FormationModule { }

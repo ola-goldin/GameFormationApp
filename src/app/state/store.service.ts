@@ -43,6 +43,19 @@ export class StoreService {
   getPlayers():Observable<any>{ 
     return this.storeQuery.selectEntity(1,"players");
   }
+
+  getReplaceModePlayer(){
+    return this.storeQuery.getValue().inReplaceMode;
+  }
+
+  setReplaceMode(inReplaceMode:Player){
+   this.formationStore.update(state=>({
+    ...state, 
+    inReplaceMode
+   }))
+   console.log(this.formationStore["storeValue"])
+  }
+
   setPlayers(allPlayers:Player[]){
     this.storeQuery.selectEntity(1).pipe(
       map(({matchMetadata,selectedFormation,players})=>{

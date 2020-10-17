@@ -32,7 +32,7 @@ export class BenchComponent implements OnInit {
   }
 
   changePlayer(player:Player){
-
+       this.store.setReplaceMode(player)
   }
 
 }
